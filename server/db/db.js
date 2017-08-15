@@ -7,5 +7,6 @@ const db = new Sequelize( process.env.RDS_DB_NAME, process.env.RDS_USERNAME, pro
     port: process.env.RDS_PORT,
     logging: false
   }
-)
-module.exports = db
+);
+
+module.exports = db;
