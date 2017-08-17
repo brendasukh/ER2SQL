@@ -28,6 +28,17 @@ export const me = () =>
         dispatch(getUser(res.data || defaultUser)))
       .catch(err => console.log(err))
 
+export const signup = (name, email, password, method) =>
+  dispatch =>
+    axios.post(`/auth/${method}`, { name, email, password })
+      .then(res => {
+        console.log("data from signup backend", res.data);
+        // dispatch(getUser(res.data))
+        // history.push('/home')
+      })
+      .catch(error =>
+        dispatch(getUser({error})))
+
 export const auth = (email, password, method) =>
   dispatch =>
     axios.post(`/auth/${method}`, { email, password })

@@ -1,6 +1,6 @@
 const User = require('./User');
-const Table = require('./Table');
-const Database = require('./Database');
+const Table = require('./table');
+const Database = require('./database');
 
 Table.belongsTo(Database);
 Database.belongsTo(User);
